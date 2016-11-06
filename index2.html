@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        <a class="cho_link" href="ajax.php?area=baoshan1">1</a>
+        <a class="cho_link" href="ajax.php?area=baoshan2">2</a>
+        <a class="cho_link" href="ajax.php?area=baoshan3">3</a>
+        <a class="cho_link" href="ajax.php?area=baoshan4">4</a>
+</div>
+    <script src="jquery-1-11-1.js"></script>
+    <script>
+        var eleMenuOn = null,
+	        clMenuOn = "cho_link_on";
+
+        var eleMenus=$('div a').on('click', function (event) {
+            var query = this.href.split("?")[1];//获取当前A标签的参数部分 area=baoshan*
+            //检查浏览器是否支持 history.pushState ，query是否为空，当前元素是否有cho_link_on类，
+            if (history.pushState && query && !$(this).hasClass(clMenuOn)) {
+                eleMenuOn && eleMenuOn.removeClass("cho_link_on"); //第一次加载eleMenuOn 为空不执行，以后加载就把上一次eleMenuOn元素移除cho_link_on类
+                eleMenuOn = $(this).addClass("cho_link_on"); //把当前元素赋值给eleMenuOn，并添加cho_link_on类
+                //$.ajax({  //发送Ajax，请求数据
+                //    url: this.href,
+                //    dataType: "json",
+                //    success: function (data) {
+                //        var html = '';
+                //        if ($.isArray(data)) {
+                //            $.each(data, function (i, obj) {
+                //                html += tempList.temp(obj);
+                //            });
+                //        }
+                //        eleListBox.html(html || '<div class="tc cr pt30">丫的没数据啊！</div>');
+                //    },
+                //    error: function () {
+                //        eleListBox.html('<div class="tc cr pt30">数据获取失败！</div>');
+                //    }
+                //});
+        
+                // history处理
+                var title = "上海3月开盘项目汇总-" + $(this).text().replace(/\d+$/, "");//改变自己想要的标题
+                document.title = title;
+           
+                if (event && /\d/.test(event.button)) {//判断是否按下鼠标点击了该元素 如果是event.button值为按左键为0，中键为1，右键为2，不是按鼠标则为undefined，例如一个元素是自执行的一次点击，那么event.button的值为undefined
+                    history.pushState({ title: title }, title, location.href.split("?")[0] + "?" + query);
+                }
+            }
+            return false;
+        });
+
+
+
+        var fnHashTrigger = function (target) {
+            var query = location.href.split("?")[1], //获取当前地址后面的参数值  
+                eleTarget = target || null;
+         
+            if (typeof query == "undefined") { //如果当前地址没有参数值
+
+                if (eleTarget = eleMenus.get(0)) {//那么eleTarget等于第一个A标签元素
+                    // 如果没有查询字符，则使用第一个导航元素的查询字符内容
+                    history.replaceState(null, document.title, location.href.split("#")[0] + "?" + eleTarget.href.split("?")[1] + location.hash);
+                    fnHashTrigger(eleTarget);
+                }
+
+            } else { //如果query不为undefined
+                eleMenus.each(function () {
+                    if (eleTarget === null && this.href.split("?")[1] === query) { //找到带有query参数的A元素
+                        eleTarget = this;//找到带有query参数的A元素
+                    }
+                });
+         
+                if (!eleTarget) { 
+                    // 如果查询序列没有对应的导航菜单，去除查询然后执行回调
+                    history.replaceState(null, document.title, location.href.split("?")[0]);
+                    
+                    fnHashTrigger();
+                } else {
+                    $(eleTarget).trigger("click"); //找到带有query参数的A元素 自执行一次点击
+                }
+            }
+        };
+
+        if (history.pushState) { //检查浏览器是否支持 history.pushState
+
+            //给window绑定前后按钮事件
+            window.addEventListener("popstate", function () {
+                fnHashTrigger();//每次点击浏览器前进后退按钮执行
+            });
+            // 默认载入时执行一次
+            fnHashTrigger();
+        }
+    </script>
+</body>
+</html>

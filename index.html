@@ -1,0 +1,883 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <!--[if lt IE 9]>
+      <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <style>
+                a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{margin:0;padding:0}
+
+  article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+
+  body{font:12px/150% "\5FAE\8F6F\96C5\9ED1", Arial,Verdana,"\5b8b\4f53";color:#666;background:#fff}
+  a{
+      text-decoration:none;
+      color:#666;
+  }
+   a:hover{
+      color:#393737;
+  }
+        #registerEnter{
+            width:300px;
+            margin:auto;
+            position:relative;
+        }
+        .h45b1{
+            height:45px;
+            border:1px solid #999;
+            line-height:45px;
+            position:relative;
+        }
+
+        .b1BottomNone{
+            border-bottom:none;
+        }
+        .topB3Ra{
+            border-top-left-radius:3px;
+            border-top-right-radius:3px;
+        }
+        .bottomB3Ra{
+            border-bottom-left-radius:3px;
+            border-bottom-right-radius:3px;
+            position:relative;
+        }
+        .verificationImg{
+            position:absolute;
+            right:0;
+            top:0;
+            height:100%;
+            padding:0 10px;
+            font-size:25px;
+            font-style:italic;
+            cursor:pointer;
+            color:red;
+            background:#f1ecec;
+            font-family:Times New Roman, Arial;
+        }
+        form .h45b1 input{
+            border:none;
+            height:25px;
+            width:90%;
+            padding:0 10px;
+            color:#555;
+            outline:none;
+        }
+         input::-moz-placeholder{
+            color:#999;
+        }
+        input::-webkit-input-placeholder{
+            color:#999;
+        }
+       form .h45b1 input:-ms-input-placeholder{
+            color:#999;
+        }
+       .registerEnterBox>h1{
+           margin:18px auto 5px;
+           font-size:85px;
+           line-height:120px;
+           color:#326bf3;
+           text-align:center;
+       }
+        .registerEnterBox>h2{
+           text-align:center;
+           font-size:18px;
+       }
+        .w120maAuto{
+            width:140px;
+            margin:25px auto 15px;
+        }
+        .w120maAuto a{
+            display:inline-block;
+            font-size:20px;
+            font-weight:bold;
+            text-decoration:none;
+            margin:0 7px;
+            padding:0 3px 7px;
+            color:#666;
+        }
+       .w120maAuto .c666b2{
+            border-bottom:2px solid #326bf3;
+           color:#326bf3;
+        }
+       .registerBtn{
+           display:block;
+           background:#326bf3;
+           height:45px;
+           line-height:45px;
+           text-align:center;
+           font-size:18px;
+           color:#fff;
+            font-family:"\5FAE\8F6F\96C5\9ED1";
+            margin-top:20px;
+            border-radius:3px;
+       }
+       .formBtn{
+           opacity:0;
+           filter:alpha(opacity=0);
+       }
+       .agreement{
+           text-align:center;
+           font-size:13px;
+           font-family:"\5FAE\8F6F\96C5\9ED1";
+       }
+        .agreement a{
+            text-decoration:none;
+            color:#2d7fc4;
+        }
+        .download{
+            background:#fff;
+            color:#2d7fc4;
+            font-size:13px;
+            text-decoration:none;
+            border:1px solid #2d7fc4;
+        }
+        .taCenter{
+            text-align:center;
+            margin:20px;
+        }
+        .hide{
+            display:none;
+        }
+        .fr{
+            float:right;
+        }
+        .fl{
+            float:left;
+        }
+        .m50{
+            margin-right:60px;
+        }
+        .m50 a{
+            display:inline-block;
+            *display:inline;
+            zoom:1;
+            margin:0 13px;
+            background-image:url("img/sprites.auto.fe745534.png");
+            width:22px;
+            height:20px;
+            opacity:0.7;
+            filter:alpha(opacity=70);
+        }
+        .m50 .WeChat {
+            background-position:-56px 43px;
+        }
+        .m50 .Twitter {
+            background-position:76px -42px;
+        }
+        .m50 .QQ {
+            background-position:-56px 1px;
+        }
+        .m50 .WeChat:hover {
+             opacity:1;
+             filter:alpha(opacity=100);
+        }
+        .m50 .Twitter:hover {
+            opacity:1;
+            filter:alpha(opacity=100);
+        }
+        .m50 .QQ:hover {
+            opacity:1;
+            filter:alpha(opacity=100);
+        }
+        .mTopBottom20{
+            margin:10px 0;
+        }
+        .popup{
+            position:absolute;
+            width:300px;
+            height:250px;
+            top:28%;
+            border:1px solid #aaa;
+            border-radius:5px;
+            background:#fff;
+            box-shadow:0 0 30px #aaa;
+            overflow:hidden;
+        }
+         .popup>div{
+             width:100%;
+             height:100%;
+             position:absolute;
+             background:#fff;
+         }
+         .popup h3{
+             text-align:center;
+             margin:25px 0 12px;
+             font-size:16px;
+
+         }
+         .popup p{
+             text-align:center;
+             margin-bottom:20px;
+             font-size:15px;
+
+         }
+         .leftBtn, .rightBtn{
+             width:18px;
+             height:18px;
+             line-height:15px;
+             border-radius:50%;
+             font-weight:bold;
+             background:#c5c5c5;
+             margin:10px;
+             text-align:center;
+             color:#fff;
+             font-size:15px;
+             position:absolute;
+         }
+           .rightBtn{
+             right:0;
+         }
+         .retrieveBtn, .verificationBtn, .getRetrieveBtn{
+             display:block;
+             width:50%;
+             height:35px;
+             margin:25px auto;
+             background:#326bf3;
+             line-height:35px;
+             text-align:center;
+             color:#fff;
+             font-size:14px;
+             border-radius:3px;
+         }
+         .retrieveBtn{
+             margin-top:50px;
+         }
+        .getRetrieveBtn {
+            margin-top:15px;
+            width:40%;
+        }
+         .leftBtn{
+             left:0;
+             line-height:20px;
+             font-size:18px;
+         }
+         .lrBnone{
+             border-left:none;
+             border-right:none;
+         }
+         .errorHint{
+            position:absolute;
+             color:red;
+             top:0;
+             right:0;
+           margin-right:20px;
+         }
+    </style>
+</head>
+<body>
+   <section id="registerEnter">
+       <div class="registerEnterBox">
+           <h1>模板</h1>
+           <h2>我的注册，登录模板</h2>
+           <div id="RESwitch" class="w120maAuto">
+               <a class="c666b2" data-rel="register" href="#register">注册</a>
+               <a href="#enter" data-rel="enter">登录</a>
+           </div>
+           <section id="register">
+               <form action="index2.html" method="get">
+                   <div class="h45b1 b1BottomNone topB3Ra">
+                       <input type="text" placeholder="姓名" class="removeHint consumer" autocomplete="off" name="consumer" tabindex="1" />
+                   </div>
+                   <div class="h45b1 b1BottomNone">
+                       <input type="text" placeholder="手机或邮箱地址" class="removeHint mobile" autocomplete="off" name="mobile_Email" tabindex="2"/>
+                   </div>
+                   <div class="h45b1 b1BottomNone">
+                       <input type="password" placeholder="密码不少于6位" class="removeHint password" name="password" tabindex="3"/>
+                   </div>
+                   <div class="h45b1 bottomB3Ra">
+                       <input type="text" placeholder="输入验证码" autocomplete="off" class="removeHint verification" name="verification" tabindex="4"/>
+                       <div class="verificationImg registerVn" title="换一张"></div>
+                   </div>
+                   <label class="registerBtn" for="btn">我的注册</label>
+                   <button id="btn" class="formBtn" type="submit"></button>
+               </form>
+               <div class="agreement">点击「注册」按钮，即代表你同意<a href="javascript:">《我的协议》</a></div>
+           </section>
+           <section id="enter" class="hide">
+               <form action="Handler.ashx" method="get">
+                   <div class="h45b1 b1BottomNone topB3Ra">
+                       <input id="uu" type="text" class="removeHint" placeholder="手机号或邮箱" autocomplete="off" name="mobileOrEmail" tabindex="1"/>
+                   </div>
+                   <div class="h45b1 b1BottomNone">
+                       <input type="hidden" name="password" />
+                       <input type="password" class="removeHint" placeholder="密码不少于6位" tabindex="2"/>
+                   </div>
+                   <div class="h45b1 bottomB3Ra">
+                       <input type="text" class="removeHint" placeholder="输入验证码" autocomplete="off" name="verification" tabindex="3"/>
+                       <div class="verificationImg verificationER" title="换一张"></div>
+                   </div>
+                   <label class="registerBtn" for="btn2">登录</label>
+                   <button id="btn2" class="formBtn" type="submit"></button>
+                   <div>
+                       <label><input type="checkbox" id="remember" name="记住我" checked value="true" />记住我</label>
+                       <a href="javascript:" style="vertical-align:top" class="fr" id="cannot">无法登录？</a>
+                       <div class="mTopBottom20">
+                           <a href="javascript:">社交帐号登录</a>
+                           <div class="fr m50" style="display:none">
+                               <a class="WeChat" href="javascript:"></a>
+                               <a class="Twitter" href="javascript:"></a>
+                               <a class="QQ" href="javascript:"></a>
+                           </div>
+                       </div>
+                   </div>
+               </form>
+           </section>
+           <a class="registerBtn download" href="javascript:">下载我的 APP</a>
+       </div>
+    
+       <div id="popup" class="popup hide">
+           <div class="popup3">
+               <a href="javascript:" class="leftBtn">&larr;</a>
+               <a href="javascript:" class="rightBtn">x</a>
+               <h3>登录我吧</h3>
+               <p>验证码将会发送至你的手机</p>
+               <form>
+                   <div class="h45b1 b1BottomNone lrBnone">
+                       <input type="tel" class="mobileNumber removeHint" placeholder="手机号" />
+                   </div>
+                   <div class="h45b1 bottomB3Ra lrBnone">
+                       <input type="text" class="mobileVerification removeHint" placeholder="输入验证码" name="verification" />
+                       <div class="verificationImg verificationPopup3" title="换一张"></div>
+                   </div>
+                   <a href="javascript:" class="getRetrieveBtn">获取验证码</a>
+               </form>
+           </div>
+           <div class="popup2">
+               <a href="javascript:" class="leftBtn">&larr;</a>
+               <a href="javascript:" class="rightBtn">x</a>
+               <h3>找回密码</h3>
+               <p>验证码将会发送至你的注册邮箱或手机</p>
+               <form>
+                   <div class="h45b1 b1BottomNone lrBnone">
+                       <input type="text" id="Mobile_or_email" class="removeHint"  placeholder="手机号或邮箱"  />
+                   </div>
+                   <div class="h45b1 bottomB3Ra lrBnone">
+                       <input type="text" id="Mobile_email_verification" class="removeHint" placeholder="输入验证码" name="verification" />
+                       <div class="verificationImg verificationPopup2" title="换一张"></div>
+                   </div>
+                   <a href="javascript:" class="getRetrieveBtn">获取验证码</a>
+               </form>
+           </div>
+           <div class="popup1">
+               <a href="javascript:" class="rightBtn">x</a>
+               <h3>无法登录</h3>
+               <p>我们提供两种方式帮助你重新登录成功</p>
+               <a href="javascript:" class="retrieveBtn">找回密码</a>
+               <a href="javascript:" class="verificationBtn" >使用手机验证登录</a>
+           </div>
+       </div>
+   </section>
+    <footer class="taCenter">
+        <span>© 2015 模板&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <a href="javascript:">我的圆桌&nbsp;&nbsp;·&nbsp;&nbsp;</a>
+        <a href="javascript:">发现&nbsp;&nbsp;·&nbsp;&nbsp;</a>
+        <a href="javascript:">移动应用&nbsp;&nbsp;·&nbsp;&nbsp;</a>
+        <a href="javascript:">使用机构帐号&nbsp;&nbsp;·&nbsp;&nbsp;</a>
+        <a href="javascript:">联系我们&nbsp;&nbsp;·&nbsp;&nbsp;</a>
+        <a href="javascript:">我们工作吧&nbsp;&nbsp;·&nbsp;&nbsp;</a>
+        <a href="javascript:">京 ICP备 13052560号&nbsp;&nbsp;·&nbsp;&nbsp;</a>
+        <span>京公网安备11010802010035</span>
+    </footer>
+    <script src="jquery-1-11-1.js"></script>
+    <script src="md5.js"></script>
+    <script>
+        //表单校验规则
+        var strategies = {
+            isNonEmpty: function (value, errorMsg) {
+                if (value === "") {//值不能为空
+                    return errorMsg;
+                } else {
+                    for (var i = 0, k = value.length; i < k; i++) {
+                        if (value[i].indexOf(" ") === -1) {
+                            return;
+                        }
+                    }
+                    return errorMsg;
+                }
+            },
+            minLength: function (value, length, errorMsg) {
+                if (value.length < length) {//值的长度不能小于指的长度
+                    return errorMsg;
+                }
+            },
+            isMobile: function (value, errorMsg) {
+                if (!/(^1[3|5|8][0-9]{9}$)/.test(value)) {//值工符合手机的格式
+                    return errorMsg;
+                }
+            },
+            isAZaz09: function (value, errorMsg) {
+                if (!/^[0-9a-zA-Z]+$/.test(value)) {
+                    return errorMsg;
+                }
+            }
+        }
+        //校验函数
+        var Validator = function () {
+            this.cache = [];
+        };
+        Validator.prototype.add = function (dom, rules) {
+            var self = this;
+            for (var i = 0, rule; rule = rules[i++];) {
+                ; (function (rule) {
+                    var strategyAry = rule.strategy.split(":");//获取校验规则 strategy: "minLength:6",
+                    var errorMsg = rule.errorMsg;     //获取错误指示信息
+
+                    self.cache.push(function () {//把校验函数放入数组中
+                        var strategy = strategyAry.shift(); //提取校验规则
+                        strategyAry.unshift(dom.value);     //把元素的值放到数组的第一位置中
+                        strategyAry.push(errorMsg);      //把指示的信息放到数组的最后位置
+                        return strategies[strategy].apply(strategies, strategyAry);//执行校验
+                    })
+                })(rule);
+            }
+
+        }
+        Validator.prototype.start = function () {
+            for (var i = 0, validatorFn; validatorFn = this.cache[i++];) {
+                var error = validatorFn();
+                if (error) {
+                    return error;
+                }
+            }
+        }
+
+        var N = 4,
+            M = 2, //随机生成的验证码长度在2-6之间
+            verificationCount = Math.floor(Math.random() * N + M);
+         
+        !function () {
+            var res = $("#RESwitch a"),   //注册和登录按钮
+                register = $("#register"),//注册合子
+                enter = $("#enter"),      //登录合子
+               remember = $("#remember"), //记住我复选框
+               mobileOrEmail = $("#enter input[name=mobileOrEmail]"),//手机或邮箱输入框
+               passwordHide = $("#enter input[name=password]"),      //用于提交加密后的隐藏密码输入框
+               password2 = $("#enter input[type =password]"),        //密码输入框不提交的
+               btn2 = $("#btn2"),                                    //登录按钮 
+               enterVerification = $("#enter input[name =verification]"),//验证码输入框
+
+            mTopBottom20a = $(".mTopBottom20>a"),      //社交登录按钮
+            mTopBottom20div = $(".mTopBottom20 .m50"), //显示社交登录图标的合子
+
+            registerInput = $("#register form input.removeHint"),//所有注册界面的输入框
+            enterInput = $("#enter form input.removeHint"),      //所有登录界面的输入框
+
+            verificationER = $(".verificationER"),       //显示验证元素
+            Vcode2 = verificationCode(verificationCount);//获取验证码
+            verificationER.text(Vcode2);
+            verificationER.on('click', function () {     //换一张验证码
+                verificationCount = Math.floor(Math.random() * N + M);//随机生成的验证码长度在2-6之间
+                Vcode2 = verificationCode(verificationCount);
+                verificationER.text(Vcode2);
+            });
+
+
+            mTopBottom20a.on('click', function () {
+                mTopBottom20div.toggle(300);//显示隐藏社交登录图标
+            });
+
+            res.on('click', function () { 
+                var _this = $(this);
+                var resData = _this.attr("data-rel");
+                resSwith(_this);      //注册和登录高亮显示切换
+                reHideShow(resData);  //注册和登录界面的切换
+                if (resData === "enter") {
+                    getValue() //如果是登录界面，获取存储在本地的登录帐号和密码
+                    setTimeout(function () { inputGetFocus(enterInput); }, 500);//给最后空的输入框聚焦
+                    return;
+                };
+                setTimeout(function () { inputGetFocus(registerInput); }, 500);//给最后空的输入框聚焦
+            });
+            window.onload = function () {
+                var data = location.hash.slice(1);
+                if (data === "register") {
+                    reHideShow(data);   //切换到注册界面
+                    resSwith(res.eq(0)) //高亮显示注册按钮
+                    inputGetFocus(registerInput);//给最后空的输入框聚焦
+                    return;
+                }
+                if (data === "enter") {
+                    reHideShow(data)    //切换到登录界面
+                    resSwith(res.eq(1));//高亮显示登录按钮
+                    getValue() //如果是登录界面，获取存储在本地的登录帐号和密码
+                    inputGetFocus(enterInput);//给最后空的输入框聚焦
+                }
+
+            }
+            function resSwith(selrf) { //注册和登录高亮显示切换
+                res.removeClass("c666b2");
+                selrf.addClass("c666b2");
+            }
+            function reHideShow(resData) { //注册和登录界面的切换
+                if (resData === "register") {
+                    register.removeClass('hide');
+                    enter.addClass('hide');
+                    return;
+                }
+                if (resData === "enter") {
+                    enter.removeClass('hide');
+                    register.addClass('hide');
+                }
+            }
+
+            btn2.on('click', function () { //点击登录按钮
+                var bol = remember.prop("checked"),
+                    passValue = password2.val(),  //获取登录密码
+                    passValueMd5 = passValue;     //加密登录密码
+
+                if (passValue === localStorage.getItem('password2Value')) {//如果该登录密码是加密过的就不再加密
+                    passwordHide.val(passValue);
+                } else {
+                    passValueMd5 = hex_md5(passValue);//加密登录密码
+                    passwordHide.val(passValueMd5);
+                }
+
+                if (bol) { //是否记住密码
+                    if (window.localStorage) {
+                        localStorage.setItem('mobileOrEmailValue', mobileOrEmail.val())
+                        localStorage.setItem('password2Value', passValueMd5)
+                    }
+                } else {
+                    localStorage.removeItem('mobileOrEmailValue')
+                    localStorage.removeItem('password2Value')
+                }
+                //验证数据，和提交数据
+                var _false = verificationFn(mobileOrEmail, password2, enterVerification);
+                //校验验证码
+                if (_false && enterVerification.val() !== Vcode2) {
+                    var span = errorHintFn(enterVerification, "你输入的验证码不确");
+                    span.css('right', 80);
+                    _false = false;
+                }
+                return _false;
+            });
+
+            function getValue() { //获取本地存储
+                if (window.localStorage) {
+                    mobileOrEmail.val(localStorage.getItem('mobileOrEmailValue'))
+                    passwordHide.val(localStorage.getItem('password2Value'))
+                    password2.val(localStorage.getItem('password2Value'))
+                }
+
+            }
+        }();
+   
+
+        !function () {
+            var popup = $('#popup'),//弹窗
+                div3 = $('#popup .popup3'),//弹窗第三页
+                div2 = $('#popup .popup2'),//弹窗第二页
+                div1 = $('#popup .popup1'),//弹窗第一页
+                retrieveBtn1 = div1.find(".retrieveBtn"),         //找回密码按钮
+                verificationBtn1 = div1.find(".verificationBtn"), //手机验证登录按钮
+                rightBtn = $("#popup .rightBtn"),     //弹窗的关闭按钮
+            cannot = $('#cannot'),                    //无法登录按钮
+            registerEnterBox = $('.registerEnterBox'),//注册和登录盒子
+            leftBtn2 = div2.find(".leftBtn"),         //找回密码弹窗后退按钮
+            leftBtn3 = div3.find(".leftBtn"),         //手机验证登录弹窗后退按钮
+            getRetrieveBtn2 = div2.find(".getRetrieveBtn"),//提交按钮
+            getRetrieveBtn3 = div3.find(".getRetrieveBtn"),//提交按钮
+            mobileEmail2 = $("#Mobile_or_email"),//手机或邮箱
+            mobileEemailVerification2 = $("#Mobile_email_verification"),//验证码
+            mobileNumber3 = $("#popup .mobileNumber"),//手机号
+            mobileVerification3 = $("#popup .mobileVerification"),//验证码
+
+            verificationPopup2 = $(".verificationPopup2"),  //显示验证元素
+            verificationPopup3 = $(".verificationPopup3"),  //显示验证元素 
+            VcodeP2 = verificationCode(verificationCount),  //获取验证码
+            VcodeP3 = verificationCode(verificationCount);  //获取验证码
+          
+            verificationPopup2.text(VcodeP2);
+            verificationPopup3.text(VcodeP3);
+
+            verificationPopup2.on('click', function () { //换一张验证码
+                verificationCount = Math.floor(Math.random() * N + M); //随机生成的验证码长度在2-6之间
+                VcodeP2 = verificationCode(verificationCount);
+                verificationPopup2.text(VcodeP2);
+            });
+            verificationPopup3.on('click', function () {//换一张验证码
+                verificationCount = Math.floor(Math.random() * N + M); //随机生成的验证码长度在2-6之间
+                VcodeP3 = verificationCode(verificationCount);
+                verificationPopup3.text(VcodeP3);
+            });
+
+        
+            retrieveBtn1.on('click', function () { //点击找回密码
+                div1div2('0', '-100%');
+            });
+            verificationBtn1.on('click', function () {//点击使用手机验证登录
+                div1div3('0', '-100%');
+            });
+
+            popup.on('click', function (e) { 
+                var bol = $(e.target).hasClass('rightBtn');//点击关闭弹窗按钮
+                if (bol) {
+                    $(this).hide(300);
+                    registerEnterBox.fadeTo(300, 1);
+                }
+            });
+
+            leftBtn2.on('click', function () {//点击找回密码弹窗后退按钮
+                div1div2('100%', '0')
+            });
+            leftBtn3.on('click', function () {//点击手机验证登录弹窗后退按钮
+                div1div3('100%', '0')
+            });
+            cannot.on('click', function () {//点击无法登录按钮
+                registerEnterBox.fadeTo(300,0.2);
+                div3.css('left', '100%');
+                div1div2('100%', '0')
+                popup.show(300);
+            });
+            //弹窗1和2的切换
+            function div1div2(value,value2) {
+                div2.animate({ 'left': value }, 300);
+                div1.animate({ 'left': value2 }, 300);
+            }
+            //弹窗1和3的切换
+            function div1div3(value, value2) {
+                div3.animate({ 'left': value }, 300);
+                div1.animate({ 'left': value2 }, 300);
+            }
+            //找回密码弹窗，获取验证码提交数据
+            getRetrieveBtn2.on('click', function () {
+                var mobileE = mobileEmail2.val();
+                if (!(/@/.test(mobileE))) {
+                    var varlidataFunc = function () {
+                        var validator = new Validator();
+                        validator.add(mobileEmail2[0], [{
+                            strategy: 'isNonEmpty',
+                            errorMsg: '不能为空'
+                        },
+                        {
+                            strategy: "isMobile",
+                            errorMsg: '请输入正确的手机或邮箱格式'
+                        }]);
+                        return validator.start();
+                    }
+                    var error1 = varlidataFunc();
+                    if (error1) {
+                        errorHintFn(mobileEmail2, error1)
+                        return false;
+                    };
+                }
+                var varlidataFunc2 = function () {
+                    var validator = new Validator();
+                    validator.add(mobileEemailVerification2[0], [{
+                        strategy: 'isNonEmpty',
+                        errorMsg: '不能为空'
+                    }]);
+                    return validator.start();
+                }
+                var error2 = varlidataFunc2();
+                if (error2) {
+                    var span = errorHintFn(mobileEemailVerification2, error2);
+                    span.css('right', 80);
+                    return false;
+                };
+                //校验验证码
+                if (mobileEemailVerification2.val() !== VcodeP2) {
+                    var span = errorHintFn(mobileEemailVerification2, '输入的验证码不正确');
+                    span.css('right', 80);
+                    return false;
+                };
+
+                //下面是提交ajax了
+            });
+            //登录弹窗获取验证码提交数据
+            getRetrieveBtn3.on('click', function () {
+                    var varlidataFunc = function () {
+                        var validator = new Validator();
+                        validator.add(mobileNumber3[0], [{
+                            strategy: 'isNonEmpty',
+                            errorMsg: '不能为空'
+                        },
+                        {
+                            strategy: "isMobile",
+                            errorMsg: '请输入正确的手机格式'
+                        }]);
+                        return validator.start();
+                    }
+                   
+                var varlidataFunc2 = function () {
+                    var validator = new Validator();
+                    validator.add(mobileVerification3[0], [{
+                        strategy: 'isNonEmpty',
+                        errorMsg: '不能为空'
+                    }]);
+                    return validator.start();
+                }
+                var error1 = varlidataFunc();
+                if (error1) {
+                    errorHintFn(mobileNumber3, error1)
+                    return false;
+                };
+                var error2 = varlidataFunc2();
+                if (error2) {
+                    var span = errorHintFn(mobileVerification3, error2);
+                    span.css('right', 80);
+                    return false;
+                };
+                //校验验证码
+                if (mobileVerification3.val() !== VcodeP3) {
+                    var span = errorHintFn(mobileVerification3, '输入的验证码不正确');
+                    span.css('right', 80);
+                    return false;
+                };
+                //下面是提交ajax了
+            });
+        }();
+
+        //注册界面
+        !function () {
+            var consumer1 = $("#register .consumer"),
+                mobile1 = $("#register .mobile"),
+                password1 = $("#register .password"),
+                verification1 = $("#register .verification"),
+                btn = $("#btn"),
+                download = $(".download"),
+                registerVn = $(".registerVn"),//显示验证元素
+                VCode = verificationCode(verificationCount);//获取验证码
+
+            registerVn.text(VCode); 
+            registerVn.on('click', function () {             //换一张验证码              
+                verificationCount = Math.floor(Math.random() * N + M);    
+                VCode = verificationCode(verificationCount);              
+                registerVn.text(VCode);                                
+                });
+
+            btn.on('click', function () {//点击注册
+                //验证用户名
+                var varlidataFunc = function () {
+                    var validator = new Validator();
+                    validator.add(consumer1[0], [{
+                        strategy: 'isNonEmpty',
+                        errorMsg: '不能为空'
+                    },
+                    {
+                        strategy: "minLength:2",
+                        errorMsg: '用户名不能少于2位'
+                    }]);
+                    return validator.start();
+                }
+                var error1 = varlidataFunc();
+                if (error1) {
+                    errorHintFn(consumer1, error1)
+                    return false;
+                };
+                //验证其它输入框
+                var bol = verificationFn(mobile1, password1, verification1);
+                //验证验证码
+                if (bol && verification1.val() !== VCode) {
+                    var span = errorHintFn(verification1, "你输入的验证码不确");
+                    span.css('right', 80);
+                    bol = false;
+                }
+                return bol;
+            });
+        
+        }();
+
+        //创建一个错误提示的元素
+        function errorHintFn(obj, data) {
+            var objParent = obj.parent(),
+                span = $("<span class=errorHint></span>");
+            objParent.find(".errorHint").remove();
+            objParent.append(span.text(data));
+            return span;
+        }
+        //获得焦点清除错误的提示
+        $("input.removeHint").on('focus', function () {
+            $(this).parent().find(".errorHint").hide(300);
+        });
+        //按回车键给最近的没有内容的输入框定焦
+        $("input.removeHint").on('keyup', function (e) {
+            if (e.which == 13) {
+                var eles = $(this).parents('form').find(".removeHint");
+                inputGetFocus(eles);
+            }
+        });
+        //给最近的没有内容的输入框定焦
+        function inputGetFocus(eles) {
+            eles.each(function (i, value) {
+                var _self = $(value);
+                if (!_self.val()) {
+                    _self.focus();
+                    return false;
+                }
+            });
+        }
+        //登录数据验证；和提交数据
+        function verificationFn(obj1, obj2, obj3) {
+            var mobileE = obj1.val();
+            if (!(/@/.test(mobileE))) {
+                var varlidataFunc = function () {
+                    var validator = new Validator();
+                    validator.add(obj1[0], [{
+                        strategy: 'isNonEmpty',
+                        errorMsg: '不能为空'
+                    },
+                    {
+                        strategy: "isMobile",
+                        errorMsg: '请输入正确的手机或邮箱格式'
+                    }]);
+                    return validator.start();
+                }
+                var error1 = varlidataFunc();
+                if (error1) {
+                    errorHintFn(obj1, error1)
+                    return false;
+                };
+            }
+            var varlidataFunc2 = function () {
+                var validator = new Validator();
+                validator.add(obj2[0], [{
+                    strategy: 'isNonEmpty',
+                    errorMsg: '不能为空'
+                }, {
+                    strategy: "minLength:6",
+                    errorMsg: '密码不能少于6位'
+                }
+                ]);
+                return validator.start();
+            }
+            var error2 = varlidataFunc2();
+            if (error2) {
+                errorHintFn(obj2, error2);
+                return false;
+            };
+            var varlidataFunc3 = function () {
+                var validator = new Validator();
+                validator.add(obj3[0], [{
+                    strategy: 'isNonEmpty',
+                    errorMsg: '不能为空'
+                }]);
+                return validator.start();
+            }
+            var error3 = varlidataFunc3();
+            if (error3) {
+                var span = errorHintFn(obj3, error3);
+                span.css('right', 80);
+                return false;
+            };
+            //下面是提交ajax了
+            return true;
+        }
+        //生成的验证码函数
+        function verificationCode(codeLength) {
+            var CLength = codeLength || 4,
+                code = "",
+                codeChar = ['2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+            for (var i = 0; i < CLength; i++) {
+                var charIndex = Math.floor(Math.random() * 56);
+                code += codeChar[charIndex];
+            };
+            return code
+        }
+    </script>
+</body>
+</html>
