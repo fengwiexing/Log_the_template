@@ -545,13 +545,14 @@
                     localStorage.removeItem('mobileOrEmailValue')
                     localStorage.removeItem('password2Value')
                 }
-                //验证数据，和提交数据
+                //验证数据
                 var _false = verificationFn(mobileOrEmail, password2, enterVerification);
+                if (!_false) return false;
                 //校验验证码
-                if (_false && enterVerification.val() !== Vcode2) {
+                if (enterVerification.val() !== Vcode2) {
                     var span = errorHintFn(enterVerification, "你输入的验证码不确");
                     span.css('right', 80);
-                    _false = false;
+                    return false;
                 }
                 formSubmit('GET', "formDispose.ashx", { 'formData': [mobileOrEmail.val(), '加密后密码'+passValueMd5].join() })
                 return false;//返回false阻止页面跳转，因你的提交按钮type=submit，也因为这个类型按钮可以回车提交
@@ -773,12 +774,13 @@
                     return false;
                 };
                 //验证其它输入框
-                var bol = verificationFn(mobile1, password1, verification1);
+                var bol = verificationFn(mobile1, password1, verification1); 
+                if (!bol) return false;
                 //验证验证码
-                if (bol && verification1.val() !== VCode) {
+                if ( verification1.val() !== VCode) {
                     var span = errorHintFn(verification1, "你输入的验证码不确");
                     span.css('right', 80);
-                    bol = false;
+                    return false;
                 }
                 formSubmit('GET', "formDispose.ashx", { 'formData':[consumer1.val(), mobile1.val(), password1.val()].join() })
                 return false;//返回false阻止页面跳转，因你的提交按钮type=submit，也因为这个类型按钮可以回车提交

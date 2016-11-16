@@ -8,7 +8,7 @@ public class formDispose : IHttpHandler {
     public void ProcessRequest (HttpContext context) {
         context.Response.ContentType = "text/plain";
 
-         context.Response.Write("ajax返回你提交内容："+context.Request.QueryString["formData"]);
+         context.Response.Write("后台返回ajax提交内容："+context.Request.QueryString["formData"]);
     }
  
     public bool IsReusable {
